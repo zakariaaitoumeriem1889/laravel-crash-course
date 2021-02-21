@@ -19,6 +19,14 @@ use Illuminate\Validation\ValidationException;
 class RegisterController extends Controller
 {
     /**
+     * RegisterController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware(['guest']);
+    }
+
+    /**
      * @return Application|Factory|View
      */
     public function index()

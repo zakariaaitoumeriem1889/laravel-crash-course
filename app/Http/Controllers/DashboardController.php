@@ -14,6 +14,14 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     /**
+     * DashboardController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
+    /**
      * @return Application|Factory|View
      */
     public function index()
