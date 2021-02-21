@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -38,6 +39,17 @@ class PostController extends Controller
             'body' => 'required'
         ]);
         $request->user()->posts()->create($request->only('body'));
+        return back();
+    }
+
+    /**
+     * @param Post $post
+     * @return RedirectResponse
+     * @throws Exception
+     */
+    public function destroy(Post $post)
+    {
+        $post->delete();
         return back();
     }
 }
