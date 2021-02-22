@@ -53,4 +53,15 @@ class PostController extends Controller
         $post->delete();
         return back();
     }
+
+    /**
+     * @param Post $post
+     * @return Application|Factory|View
+     */
+    public function show(Post $post)
+    {
+        return view('posts.show', [
+            'post' => $post
+        ]);
+    }
 }
