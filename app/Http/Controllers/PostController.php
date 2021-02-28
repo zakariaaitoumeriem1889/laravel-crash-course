@@ -18,6 +18,14 @@ use Illuminate\Validation\ValidationException;
 class PostController extends Controller
 {
     /**
+     * PostController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware(['auth'])->only(['store', 'destroy']);
+    }
+
+    /**
      * @return Application|Factory|View
      */
     public function index()
