@@ -7,7 +7,8 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "mail": "maildev -o"
     },
     "devDependencies": {
         "axios": "^0.21",
@@ -16,6 +17,7 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
+        "maildev": "^1.1.0",
         "tailwindcss": "^2.0.3"
     }
 }
